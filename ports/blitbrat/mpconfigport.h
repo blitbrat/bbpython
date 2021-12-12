@@ -27,6 +27,11 @@ typedef long mp_off_t;
 #define MICROPY_PY_SYS_PLATFORM "blitbrat"
 #define MICROPY_PY_SYS_EXIT     (0)
 
+extern const struct _mp_obj_module_t mp_module_bb;
+
+#define MICROPY_PORT_BUILTIN_MODULES \
+    { MP_ROM_QSTR(MP_QSTR_bb), MP_ROM_PTR(&mp_module_bb) },
+
 #define MP_STATE_PORT MP_STATE_VM
 
 #define MICROPY_PORT_ROOT_POINTERS \
